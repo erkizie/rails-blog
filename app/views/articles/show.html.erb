@@ -15,7 +15,10 @@
 
 <p><i>Comments:</i></p>
 
-<% @article.comments.each do |comment| %><!-- Вывод комментариев -->
+<% @article.comments.each do |comment| %>
+  <p>
+    <%= comment.user.username %>
+  </p>
   <p>
     <%= comment.content %> <br>
   </p>

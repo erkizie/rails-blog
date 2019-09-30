@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
 
     @comment = @article.comments.create(comment_params)
 
-    @comment.user_id=current_user.id if current_user
+    @comment.user_id = current_user.id if current_user
 
     @comment.save
 
