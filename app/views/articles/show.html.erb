@@ -17,10 +17,9 @@
 
 <% @article.comments.each do |comment| %>
   <p>
-    <%= comment.user.username %>
-  </p>
-  <p>
-    <%= comment.content %> <br>
+  <strong><%= comment.user.username %></strong> said:
+
+    <i><%= comment.content %></i>
   </p>
   <%= link_to 'Destroy Comment', [comment.article, comment],
               method: :delete,
