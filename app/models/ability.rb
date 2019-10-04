@@ -7,11 +7,11 @@ class Ability
 
     user ||= User.new # guest user (not logged in)
 
-    if user.admin?
+    if user.has_role? :admin
       can :manage, :all
-    elsif user.author?
+    elsif user.has_role? :author
       can :manage, Article, user_id: user.id
-    elsif user.moderator?
+    elsif user.has_role? :moderator
       can manage, Article.comments
     else
       can :read, :all
