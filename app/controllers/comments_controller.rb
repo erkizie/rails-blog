@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource :nested => :article
   before_action :set_article_comment, only: [:create, :update, :destroy]
 
   def create
