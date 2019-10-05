@@ -12,9 +12,10 @@ class Ability
     elsif user.has_role? :author
       can :read, :all
       can :manage, Article, user_id: user.id
+      can :manage, Comment, user_id: user.id
     elsif user.has_role? :moderator
-      can :manage, Article.comments
       can :read, :all
+      can :manage, Comment
     else
       can :read, :all
     end
