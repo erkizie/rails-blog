@@ -29,5 +29,6 @@
 </table>
 
 <br>
-
+<% if can? :create, Article %>
 <%= link_to 'New Article', new_article_path %>
+<% end %>
