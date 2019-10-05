@@ -19,14 +19,9 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %><br>
-    <%= f.input :role,
-                collection: User.roles.keys.to_a, as: :radio_buttons, label: "Your role:"%>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up", class: "btn-primary" %>
-  </div> <br>
+    <div class="form-actions">
+      <%= f.button :submit, "Sign up", class: "btn-primary" %>
+    </div> <br>
 <% end %>
 
 <p>Already have an account? <%= render "devise/shared/links" %> </p>
-
