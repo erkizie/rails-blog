@@ -24,16 +24,15 @@
   <p>
   <strong><%= comment.user.username %></strong> said:
 
-    <i><%= comment.content %></i>
+    <i><%= comment.content %> / </i>
+    <%#= link_to 'Update', [comment.article, comment], method: :put %>
+    <%= link_to 'Destroy', [comment.article, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
   </p>
-  <%= link_to 'Destroy Comment', [comment.article, comment],
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %>
 <% end %>
 
 <h4>Add comment</h4>
 <p>
-  <%= form_for([@article, @article.comments.build]) do |f| %><!-- @article.comments - "коллецкия", .build создаст новый объект, который не будет сохранён -->
+  <%= form_for([@article, @article.comments.build]) do |f| %><!-- @article.comments - "коллецкия", .build создаст новый объект, который не будет сохранён
   <p>
     Comment: <br>
     <%= f.text_area :content, rows: '5' %>

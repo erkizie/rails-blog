@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
   #     end
   #   end
   # end
-  #
+
   def destroy
 
     @comment = @article.comments.find(params[:id])
